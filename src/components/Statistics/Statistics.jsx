@@ -1,29 +1,21 @@
-import data from '/data.json';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { StatWrapper, StatTitle, StatList } from './Statistics.styled';
+import { StatItem } from './StatItem';
 
-export const Statistics = () => {
+export const Statistics = ( {title, stats}) => {
   return (
-    <section class="statistics">
-    <h2 class="title">Upload stats</h2>
+    <StatWrapper className="statistics">
+        {(title)&&(<StatTitle className="title">{title}</StatTitle>)}
 
-    <ul class="stat-list">
-        <li class="item">
-        <span class="label">.docx</span>
-        <span class="percentage">4%</span>
-        </li>
-        <li class="item">
-        <span class="label">.mp3</span>
-        <span class="percentage">14%</span>
-        </li>
-        <li class="item">
-        <span class="label">.pdf</span>
-        <span class="percentage">41%</span>
-        </li>
-        <li class="item">
-        <span class="label">.mp4</span>
-        <span class="percentage">12%</span>
-        </li>
-    </ul>
-    </section>
+        <StatList className="stat-list">
+            {stats.map((statItem) => (
+                <StatItem key={statItem.id} statItem={statItem}/>
+            ))}
+        </StatList>
+    </StatWrapper>
   )};
+
+Statistics.propTypes = {
+    title: PropTypes.string,
+};
+

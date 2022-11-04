@@ -4,9 +4,9 @@ export const theme = {
     white: '#fff',
     gray: 'gray',
     lightblue: 'aquamarine',
-    primary: '#07c',
-    secondary: '#05a',
-    accent: '#609',
+    red: 'red',
+    green: 'green',
+    lightgray: 'lightgray',
     muted: '#f6f6f6',
   },
   space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
@@ -33,6 +33,7 @@ export const theme = {
   borders: {
     none: 'none',
     normal: '1px solid rgba(0, 0, 0, 0.2)',
+    lightgray: '1px solid lightgray',
   },
   radii: {
     none: '0',

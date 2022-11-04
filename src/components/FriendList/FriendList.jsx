@@ -1,5 +1,11 @@
-import friends from '/friends.json';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import { FriendsListItems } from './FriendsList.styled';
+import { FriendsListItem } from './FriendsListItem';
 
-<FriendList friends={friends} />;
+export const FriendList = ({ friends }) => {
+  return (
+    <FriendsListItems className="statistics">
+        {friends.map((friend) => (
+            <FriendsListItem key={friend.id} friend={friend}/>
+            ))}
+    </FriendsListItems>
+  )};
