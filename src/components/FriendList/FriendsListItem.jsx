@@ -1,12 +1,10 @@
-import { ListItem, FriendStatusOn, FriendStatusOff, FriendAvatar, FriendName } from './FriendsList.styled';
+import { ListItem, FriendStatus, FriendAvatar, FriendName } from './FriendsList.styled';
 import PropTypes from 'prop-types';
 
 export const FriendsListItem = ({friend: {id, isOnline, avatar, name}}) => {
   return (
         <ListItem className="item" id={id}>
-            { isOnline
-                ? <FriendStatusOn className="status"></FriendStatusOn>
-                : <FriendStatusOff className="status"></FriendStatusOff> }
+            <FriendStatus className="status" isOnline={isOnline}></FriendStatus>
             <FriendAvatar className="avatar" src={avatar} alt="User avatar"/>
             <FriendName className={name}>{name}</FriendName>
         </ListItem>

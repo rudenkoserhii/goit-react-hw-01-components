@@ -28,22 +28,15 @@ export const ListItem = styled.li`
     width:  ${p => p.theme.space[8]}px;
 `;
 
-export const FriendStatusOn = styled.span`
+export const FriendStatus = styled.span`
     height:  ${p => p.theme.space[4]}px;
     width:  ${p => p.theme.space[4]}px;
     border-radius: ${p => p.theme.radii.round};
 
-    background-color: ${p => p.theme.colors.green};
+    background-color: ${p => p.isOnline ? p.theme.colors.green : p.theme.colors.red};
 `;
 
-export const FriendStatusOff = styled.span`
 
-    height:  ${p => p.theme.space[4]}px;
-    width:  ${p => p.theme.space[4]}px;
-    border-radius: ${p => p.theme.radii.round};
-
-    background-color: ${p => p.theme.colors.red};
-`;
 
 export const FriendAvatar = styled.img`
     width: ${p => p.theme.space[6]}px;
